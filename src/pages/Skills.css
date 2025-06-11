@@ -1,0 +1,118 @@
+.skills-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #ffb56b, #f39060);
+}
+
+.skills-section {
+  margin-bottom: 3rem;
+}
+
+.skills-category {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: #f0f0f0;
+  display: flex;
+  align-items: center;
+}
+
+.skills-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.skill-badge {
+  transition: transform 0.2s ease, filter 0.2s ease;
+  transform-origin: center;
+}
+
+.skill-badge:hover {
+  transform: translateY(-5px) scale(1.05);
+  filter: drop-shadow(0 5px 15px rgba(255, 181, 107, 0.4));
+}
+
+/* Animation for badges */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skill-badge {
+  animation: fadeIn 0.6s ease forwards;
+  opacity: 0;
+}
+
+/* Staggered animation delay for each badge */
+.skill-badge:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.skill-badge:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.skill-badge:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.skill-badge:nth-child(4) {
+  animation-delay: 0.25s;
+}
+.skill-badge:nth-child(5) {
+  animation-delay: 0.3s;
+}
+.skill-badge:nth-child(6) {
+  animation-delay: 0.35s;
+}
+.skill-badge:nth-child(7) {
+  animation-delay: 0.4s;
+}
+.skill-badge:nth-child(8) {
+  animation-delay: 0.45s;
+}
+.skill-badge:nth-child(9) {
+  animation-delay: 0.5s;
+}
+.skill-badge:nth-child(10) {
+  animation-delay: 0.55s;
+}
+.skill-badge:nth-child(n + 11) {
+  animation-delay: 0.6s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-badges {
+    gap: 0.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .skills-category {
+    font-size: 1.3rem;
+  }
+}

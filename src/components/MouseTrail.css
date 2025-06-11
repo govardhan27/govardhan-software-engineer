@@ -1,0 +1,62 @@
+.mouse-trail {
+  position: fixed; /* Use fixed so it stays relative to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Crucial: allows clicks on elements beneath the trail */
+  z-index: 9999; /* Ensure it's on top of other content */
+}
+
+.trail-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute; /* Allows precise positioning with top/left */
+  pointer-events: none; /* Inherited from .mouse-trail, but good to be explicit */
+  transform-origin: center; /* Ensures scaling happens from the center */
+  mix-blend-mode: screen; /* For the vibrant, glowing effect */
+  opacity: 0.85; /* Slight transparency */
+  /* filter: brightness(1.35); Boosts brightness for glow */
+  /* /* box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);  */
+
+  transition: transform 0.3s ease-out, left 0.1s linear, top 0.1s linear;
+  transform: scale(1) translateZ(0);
+  /* backdrop-filter: blur(1px); */
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes subtle-glow {
+  0% {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  }
+}
+
+.trail-circle:first-child {
+  animation: subtle-pulse 2s infinite;
+  /* backdrop-filter: blur(0px); Sharper first circle */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+}
+
+.trail-circle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.7) 70%
+  );
+  border-radius: 50%;
+  z-index: 1; /* Ensure gradient stays above background */
+}

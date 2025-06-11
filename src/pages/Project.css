@@ -1,0 +1,180 @@
+.projects-section {
+  padding: 2rem 0;
+  position: relative;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem; /* Reduced from 3rem */
+  position: relative;
+  display: inline-block;
+}
+
+.section-title:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #ffb56b, #f39060);
+}
+
+/* Projects cards container */
+.projects-cards {
+  max-width: 80%;
+  margin: 0 auto;
+  position: relative;
+  /* Reserve enough space for scrolling through all projects */
+  padding-bottom: 50vh; /* Reduced from 70vh */
+}
+
+/* Individual project cards */
+.project-card {
+  position: sticky;
+  /* top value is set inline for each card */
+  margin-bottom: 2rem; /* Reduced from 3rem */
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+/* Card inner container */
+.project-card-inner {
+  background-color: #0f0f1e; /* Updated to match existing background */
+  border-radius: 12px; /* Slightly smaller radius */
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  min-height: 350px; /* Reduced from 400px */
+  box-shadow: 0 8px 25px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Subtler border */
+  position: relative;
+  /* Remove pattern background or update it */
+  background-image: none; /* Removed background pattern */
+}
+
+/* Project content section */
+.project-content {
+  padding: 2rem; /* Reduced from 2.5rem */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-title {
+  font-size: 1.8rem; /* Reduced from 2rem */
+  margin: 0;
+  color: #4f9eff;
+  font-weight: 600;
+}
+
+.project-description {
+  margin-bottom: 1.5rem; /* Reduced from 2rem */
+  color: #adb5bd;
+  font-size: 1rem; /* Reduced from 1.1rem */
+  line-height: 1.6;
+}
+
+.project-links {
+  display: flex;
+  gap: 1.2rem; /* Reduced from 1.5rem */
+  margin-top: auto;
+}
+
+.project-link {
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem; /* Slightly smaller */
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.project-link:hover {
+  color: #4f9eff;
+  text-decoration: underline;
+}
+
+/* Project image section */
+.project-image {
+  width: 100%;
+  height: 250px; /* Reduced from 300px */
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease;
+}
+
+/* End spacer to allow scrolling past the last card */
+.projects-end-spacer {
+  height: 20vh; /* Reduced from 30vh */
+}
+
+/* Animation for elements */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-item {
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+  animation-delay: 0.2s;
+}
+
+/* Media query for larger screens - switch to horizontal layout */
+@media (min-width: 640px) {
+  .project-card-inner {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 320px; /* Reduced from 384px */
+  }
+
+  .project-image {
+    height: 100%;
+  }
+
+  .project-image img {
+    height: 85%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0 0 0 12px; /* Match the smaller border radius */
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 639px) {
+  .project-content {
+    padding: 1.25rem; /* Reduced from 1.5rem */
+  }
+
+  .project-title {
+    font-size: 1.4rem; /* Reduced from 1.5rem */
+    margin-bottom: 0.8rem; /* Reduced from 1rem */
+  }
+
+  .project-description {
+    font-size: 0.95rem; /* Reduced from 1rem */
+    margin-bottom: 1.2rem; /* Reduced from 1.5rem */
+  }
+}
