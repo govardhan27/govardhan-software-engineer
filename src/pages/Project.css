@@ -32,7 +32,7 @@
   margin: 0 auto;
   position: relative;
   /* Reserve enough space for scrolling through all projects */
-  padding-bottom: 50vh; /* Reduced from 70vh */
+  /* padding-bottom: 50vh; Reduced from 70vh */
 }
 
 /* Individual project cards */
@@ -200,7 +200,7 @@
 
   .projects-cards {
     max-width: 95%;
-    padding-bottom: 40vh;
+    /* padding-bottom: 40vh; */
   }
 
   .project-card {
@@ -244,7 +244,7 @@
 @media (max-width: 639px) {
   .projects-cards {
     max-width: 100%;
-    padding-bottom: 30vh;
+    /* padding-bottom: 30vh; */
   }
 
   .project-card {
