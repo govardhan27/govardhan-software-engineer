@@ -1,5 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
+// Function to detect if we're on a mobile device
+const isMobile = () => {
+  return window.innerWidth <= 768;
+};
+
 export function useScrollAnimation(options = {}) {
   const {
     threshold = 0.1,
@@ -11,6 +16,12 @@ export function useScrollAnimation(options = {}) {
   const elementRef = useRef(null);
 
   useEffect(() => {
+    // Adjust threshold and rootMargin for mobile devices
+    const adjustedThreshold = isMobile()
+      ? Math.max(threshold, 0.05)
+      : threshold;
+    const adjustedRootMargin = isMobile() ? "0px 0px -50px 0px" : rootMargin;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -23,8 +34,8 @@ export function useScrollAnimation(options = {}) {
         }
       },
       {
-        threshold,
-        rootMargin,
+        threshold: adjustedThreshold,
+        rootMargin: adjustedRootMargin,
       }
     );
 
@@ -55,6 +66,15 @@ export function useScrollAnimationMultiple(options = {}) {
   const elementsRef = useRef([]);
 
   useEffect(() => {
+    // Adjust for mobile devices
+    const adjustedThreshold = isMobile()
+      ? Math.max(threshold, 0.05)
+      : threshold;
+    const adjustedRootMargin = isMobile() ? "0px 0px -30px 0px" : rootMargin;
+    const adjustedStaggerDelay = isMobile()
+      ? Math.min(staggerDelay, 50)
+      : staggerDelay;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

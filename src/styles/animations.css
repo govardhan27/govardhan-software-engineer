@@ -192,6 +192,64 @@
   }
 }
 
+/* Responsive adjustments for animations */
+@media (max-width: 768px) {
+  /* Reduce animation distances on mobile */
+  .animate-slide-up {
+    transform: translateY(30px);
+  }
+
+  .animate-slide-left {
+    transform: translateX(-30px);
+  }
+
+  .animate-slide-right {
+    transform: translateX(30px);
+  }
+
+  .animate-scale {
+    transform: scale(0.9);
+  }
+
+  /* Faster animations on mobile */
+  .scroll-animate {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .animate-fade-in.visible {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .animate-slide-up.visible {
+    animation: slideUp 0.6s ease forwards;
+  }
+
+  .animate-slide-left.visible {
+    animation: slideLeft 0.6s ease forwards;
+  }
+
+  .animate-slide-right.visible {
+    animation: slideRight 0.6s ease forwards;
+  }
+
+  .animate-scale.visible {
+    animation: scaleIn 0.6s ease forwards;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even more reduced animations on very small screens */
+  .animate-slide-up,
+  .animate-slide-left,
+  .animate-slide-right {
+    transform: translateY(20px);
+  }
+
+  .scroll-animate {
+    transform: translateY(20px);
+  }
+}
+
 /* Utility classes for delays */
 .delay-100 {
   animation-delay: 0.1s;
