@@ -127,6 +127,90 @@
   }
 }
 
+/* Enhanced responsive adjustments for mobile devices */
+@media (max-width: 1024px) {
+  .footer {
+    bottom: 20px;
+  }
+
+  .social-container {
+    padding: 0.6rem;
+  }
+
+  .social-icon {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    bottom: 15px;
+  }
+
+  .social-container {
+    padding: 0.5rem;
+  }
+
+  .social-icon {
+    width: 36px;
+    height: 36px;
+    margin: 0 1px;
+  }
+
+  .social-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .social-container:hover {
+    padding: 0.6rem;
+    transform: translateY(-3px) scale(1.02);
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    bottom: 10px;
+  }
+
+  .social-container {
+    padding: 0.4rem;
+  }
+
+  .social-icon {
+    width: 32px;
+    height: 32px;
+    margin: 0;
+  }
+
+  .social-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .social-container:hover {
+    padding: 0.5rem;
+    transform: translateY(-2px) scale(1.01);
+  }
+}
+
+@media (max-width: 320px) {
+  .social-container {
+    padding: 0.3rem;
+  }
+
+  .social-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .social-icon svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
 .tooltip {
   position: absolute;
   top: -40px; /* Position above instead of below */

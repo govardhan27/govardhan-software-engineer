@@ -43,10 +43,30 @@
 
 .app-container {
   min-height: 100vh;
-  /* background-color: #0f0f1e; */
+  overflow-x: hidden; /* Prevent horizontal scroll on mobile */
 }
 
 section {
-  /* min-height: 50vh; */
   scroll-margin-top: 60px; /* Match navbar height */
+}
+
+/* Mobile adjustments for sections */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  section {
+    scroll-margin-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    padding: 0.5rem;
+  }
+
+  section {
+    scroll-margin-top: 45px;
+  }
 }

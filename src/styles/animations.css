@@ -1,0 +1,277 @@
+/* Scroll-triggered animations */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Different animation types */
+.animate-fade-in {
+  opacity: 0;
+  animation-fill-mode: both;
+}
+
+.animate-fade-in.visible {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(50px);
+  animation-fill-mode: both;
+}
+
+.animate-slide-up.visible {
+  animation: slideUp 0.8s ease forwards;
+}
+
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation-fill-mode: both;
+}
+
+.animate-slide-left.visible {
+  animation: slideLeft 0.8s ease forwards;
+}
+
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  animation-fill-mode: both;
+}
+
+.animate-slide-right.visible {
+  animation: slideRight 0.8s ease forwards;
+}
+
+.animate-scale {
+  opacity: 0;
+  transform: scale(0.8);
+  animation-fill-mode: both;
+}
+
+.animate-scale.visible {
+  animation: scaleIn 0.8s ease forwards;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Staggered animations */
+.animate-stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-stagger-children.visible > *:nth-child(1) {
+  transition-delay: 0.1s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-stagger-children.visible > *:nth-child(2) {
+  transition-delay: 0.2s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-stagger-children.visible > *:nth-child(3) {
+  transition-delay: 0.3s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-stagger-children.visible > *:nth-child(4) {
+  transition-delay: 0.4s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-stagger-children.visible > *:nth-child(5) {
+  transition-delay: 0.5s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-stagger-children.visible > *:nth-child(6) {
+  transition-delay: 0.6s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-stagger-children.visible > *:nth-child(7) {
+  transition-delay: 0.7s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-stagger-children.visible > *:nth-child(8) {
+  transition-delay: 0.8s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* For reducing motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-animate,
+  .animate-fade-in,
+  .animate-slide-up,
+  .animate-slide-left,
+  .animate-slide-right,
+  .animate-scale {
+    transition: none;
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .animate-stagger-children > * {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Responsive adjustments for animations */
+@media (max-width: 768px) {
+  /* Reduce animation distances on mobile */
+  .animate-slide-up {
+    transform: translateY(30px);
+  }
+
+  .animate-slide-left {
+    transform: translateX(-30px);
+  }
+
+  .animate-slide-right {
+    transform: translateX(30px);
+  }
+
+  .animate-scale {
+    transform: scale(0.9);
+  }
+
+  /* Faster animations on mobile */
+  .scroll-animate {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .animate-fade-in.visible {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .animate-slide-up.visible {
+    animation: slideUp 0.6s ease forwards;
+  }
+
+  .animate-slide-left.visible {
+    animation: slideLeft 0.6s ease forwards;
+  }
+
+  .animate-slide-right.visible {
+    animation: slideRight 0.6s ease forwards;
+  }
+
+  .animate-scale.visible {
+    animation: scaleIn 0.6s ease forwards;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even more reduced animations on very small screens */
+  .animate-slide-up,
+  .animate-slide-left,
+  .animate-slide-right {
+    transform: translateY(20px);
+  }
+
+  .scroll-animate {
+    transform: translateY(20px);
+  }
+}
+
+/* Utility classes for delays */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+.delay-500 {
+  animation-delay: 0.5s;
+}
+.delay-600 {
+  animation-delay: 0.6s;
+}
+.delay-700 {
+  animation-delay: 0.7s;
+}
+.delay-800 {
+  animation-delay: 0.8s;
+}
