@@ -87,10 +87,7 @@
   }
 }
 
-.animate-item {
-  opacity: 0;
-  animation: fadeIn 0.6s ease forwards;
-}
+/* Legacy animation classes removed - now using scroll-triggered animations */
 
 /* Staggered animation delay for each item */
 .about-section-title {

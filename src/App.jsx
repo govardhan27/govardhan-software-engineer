@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { About } from "./pages/About";
 import { MouseTrail } from "./components/MouseTrail";
 import { Projects } from "./pages/Project";
