@@ -40,7 +40,7 @@ export function About() {
         rootMargin="0px 0px -80px 0px"
       >
         <p className="about-description">
-          I'm a Full-Stack AI Engineer with 5+ years of comprehensive
+          I'm a Full-Stack Engineer with 5+ years of comprehensive
           development experience, spanning frontend interfaces, scalable backend
           systems, and cutting-edge AI implementations. I specialize in building
           end-to-end intelligent applications that combine exceptional user
@@ -74,7 +74,7 @@ export function About() {
             <h3 className="about-subheading">⚙️ Full-Stack Architecture</h3>
             <p>
               Proven track record designing and implementing complete web
-              applications using React frontends, Node.js/Python backends, and
+              applications using React frontends, Node.js/Python/JAVA backends, and
               cloud-native AWS infrastructure. I architect scalable systems
               handling everything from authentication and payments to real-time
               data processing and API integrations.
